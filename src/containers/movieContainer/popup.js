@@ -4,7 +4,7 @@ import "./index.scss";
 const Popup = ({showPopup, popUpData, handleShowPopupData}) => {
     return (
         <>
-            {showPopup && <div className="popUpBody">
+            {showPopup && <div className="popUpBody" data-testid={popUpData.id}>
                 <ul>
                     <li className="titleStyle">{popUpData?.title}</li>
                     <li className="synopsisStyle">{popUpData?.synopsis}</li>
@@ -12,7 +12,7 @@ const Popup = ({showPopup, popUpData, handleShowPopupData}) => {
                         Release Date: {popUpData?.releaseDate}
                     </li>
                 </ul>
-                <span className="buttonStyle" onClick={() => handleShowPopupData()}>Close</span>
+                <span className="buttonStyle" onClick={() => handleShowPopupData()} data-testid={popUpData.title}>Close</span>
             </div>}
         </>
     )

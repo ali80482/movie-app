@@ -1,13 +1,14 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import movieReducer from '../containers/movieContainer/redux/movieSlice';
+// import movieReducer from '../containers/movieContainer/redux/movieSlice';
 import { watcherSaga } from './rootSaga';
+import reducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const reducer = combineReducers({
-  movie: movieReducer,
-})
+// const reducer = combineReducers({
+//   movie: movieReducer,
+// })
 
 const store = configureStore({
   reducer,
