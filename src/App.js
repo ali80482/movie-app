@@ -1,10 +1,10 @@
 import React from 'react';
 import MovieApp from './containers/movieContainer/index';
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
     return (
-        <div>
+        <div className="bodyContainer">
             <MovieApp />
         </div>
     )
