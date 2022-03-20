@@ -1,7 +1,7 @@
 import { takeLatest } from 'redux-saga/effects';
-import { getMovie } from '../containers/movieContainer/redux/movieSlice'; 
-import { handleGetMovies } from "../containers/movieContainer/redux/handlers/movie";
+import { handleGetMovies } from '../containers/movieContainer/redux/handlers/movie';
+import { getMovie } from '../containers/movieContainer/redux/movieSlice';
 
 export function* watcherSaga() {
-    yield takeLatest(getMovie.type, handleGetMovies);
+  yield takeLatest(getMovie.type, handleGetMovies);
 }

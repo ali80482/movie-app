@@ -1,13 +1,13 @@
 import React from 'react';
+import './App.scss';
 import MovieApp from './containers/movieContainer/index';
-import "./App.scss";
 
 const App = () => {
-    return (
-        <div className="bodyContainer">
-            <MovieApp />
-        </div>
-    )
-}
+  return (
+    <div className="bodyContainer">
+      <MovieApp />
+    </div>
+  );
+};
 
 export default App;
