@@ -1,10 +1,13 @@
 @import "./variableScss.scss";
 
 @media (max-width: 600px) {
-    .cardStyle {
-        background-color: $backgroundColor;
-        margin: $commonMargin;
-        display: $commonDisplay;
+    .cardContainerStyles {
+        position: absolute;
+        grid-template-columns: 1fr;
+        width: 100%;
+        column-gap: 5px;
+        align-content: space-around;
+        text-align: -webkit-center;
     }
     .imageStyle {
         width: 15%;
@@ -12,15 +15,14 @@
 }
 
 @media (min-width: 600px) {
-    .cardStyle {
-        background-color: $backgroundColor;
-        margin: $commonMargin;
-        display: $commonDisplay;
-        width: 64%;
-        margin-left: 18%;
-        margin-top: 10px;
-        z-index: 200;
-        text-align: $commonTextAlign;
+    .cardContainerStyles {
+        position: absolute;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        place-items: center;
+        align-content: space-around;
+        text-align: -webkit-center;
     }
     .imageStyle {
         width: 15%;
@@ -28,91 +30,106 @@
 }
 
 @media (min-width: 900px) {
-    .cardStyle {
-        background-color: rgb(55, 61, 59);
-        display: $commonDisplay;
-        width: 64%;
-        margin-left: 18%;
-        margin-top: 10px;
-        z-index: 200;
-        text-align: $commonTextAlign;
+    .cardContainerStyles {
+        position: absolute;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        place-items: center;
+        align-content: space-around;
+        text-align: -webkit-center;
     }
 }
 
 @media (min-width: 1200px) {
-    .cardStyle {
-        background-color: rgb(162, 163, 175);
-        display: $commonDisplay;
-        width: 64%;
-        margin-left: 18%;
-        margin-top: 10px;
-        z-index: 200;
-        text-align: $commonTextAlign;
+    .cardContainerStyles {
+        position: absolute;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 100%;
+        place-items: center;
+        align-content: space-around;
+        text-align: -webkit-center;
     }
     .imageStyle {
         width: 20%;
     }
 }
 
-@media (min-width: 1536px) {
-    .cardStyle {
-        background-color: rgb(73, 46, 16);
-        display: $commonDisplay;
-        width: 72%;
-        margin-left: 14%;
-        margin-top: 10px;
-        z-index: 200;
-        text-align: $commonTextAlign;
-    }
-    .imageStyle {
-        width: 20%;
-    }
+.clearStyle {
+    clear: both;
+}
+
+.visibleStyle {
+    position: relative;
+}
+
+.cardStyle {
+     width: 100%;
+     margin-top: 10px;
+     & .imageDiv {
+        width: 96%;
+        height: 60%;
+        background-color: rgb(33, 206, 70);
+        & .posterImage {
+            width: 100%;
+            height: 100%;
+        }
+     };
+     & .imageDataDiv {
+        width: 96%;
+        background-color: #3c3b42;
+        grid-template-rows: 1fr 1fr 1fr;
+        place-items: center;
+        display: grid;
+        & .cardTitle {
+            font-size: 134%;
+            font-weight: 600;
+        };
+        & .cardReleaseDate {
+            font-size: 100%;
+            font-weight: 600;
+        };
+        & .cardRank {
+            font-size: 100%;
+            font-weight: 600;
+        }
+     };
+}
+
+.cardStyle:hover {
+    color: #fff;
 }
 
 .orderSelectStyle {
-    background-color: rgb(58, 50, 40);
-    height: 50px;
+    background-color: #443d3d;
+    height: 6vh;
     padding-top: 15px;
     font-weight: 600;
+    opacity: 0.5;
     & label {
         margin: 0 20px;
         color: burlywood;
     };
     & select {
-        width: 300px;
-        height: 38px;
+        width: 20%;
+        height: 72%;
         border-radius: 2px;
     };
 }
 
-.cardContainerStyles {
-    display: block;
-}
-
-.cardStyle:hover {
-    background-color: rgb(121, 128, 125);
-    color:rgb(14, 39, 39)
-}
-
-.cardText {
-    margin-top: 10%;
-    font-size: 24px;
-    margin-left: 6%;
-    font-weight: 600;
-}
-
 .popUpBody {
     position: fixed;
-        top: 50%;
-        left: 50%;
-        background: rgb(35, 214, 155);
-        width: 500px;
-        height: 500px;
-        margin-left: -250px;
-        margin-top: -250px;
-        z-index: 200;
-        text-align: $commonTextAlign;
-        border-radius: 5px;
+    background: #4c504f;
+    margin: 8% 2%;
+}
+
+@media (max-width: 300px) {
+    .popUpBody {
+        position: fixed;
+        background: #4c504f;
+        margin: 4% -2%;
+    }
 }
 
 .popUpBody ul {
@@ -122,18 +139,20 @@
 .titleStyle {
     font-weight: 800;
     padding: 20px 0;
-    font-size: large;
+    font-size: 150%;
 }
 
 .synopsisStyle {
     margin-right: 34px;
     font-weight: 600;
     margin-bottom: 20px;
+    font-size: 108%;
 }
 
 .dateStyle {
     font-weight: 600;
-    color: rgb(14, 39, 39);
+    color: #4ea9a9;
+    font-size: 102%;
 }
 
 .buttonStyle {
@@ -141,9 +160,12 @@
     width: 78px;
     display: inline-block;
     border-radius: 4px;
-    background-color: #4b505a;
+    background-color: #20407e;
     font-weight: 500;
-    color: #28ccdd;
+    color: #a0bfc3;
     font-size: 14px;
     padding-top: 5px;
+    margin-left: 42%;
+    margin-bottom: 14px;
+    text-align: center;
 }

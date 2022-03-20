@@ -15,7 +15,9 @@ const SetOrder = ({changeOrder, orderSelect}) => {
                             )
                     })}
                 </select>
+                <div className="clearStyle" />
             </div>
+            <div className="clearStyle" />
         </>
     )
 }

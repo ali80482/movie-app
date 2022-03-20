@@ -39,19 +39,24 @@ const MovieApp = () => {
 
     return ( 
         <>
-            <SetOrder 
-                changeOrder={changeOrder}
-                orderSelect={orderSelect}
-            />
-            <Card 
-                movie={movie}
-                handleShowPopupData={handleShowPopupData}
-            />
+            <div className="visibleStyle">
+                <SetOrder 
+                    changeOrder={changeOrder}
+                    orderSelect={orderSelect}
+                />
+                <div className="clearStyle" />
+                <Card 
+                    movie={movie}
+                    handleShowPopupData={handleShowPopupData}
+                />
+                <div className="clearStyle" />
+            </div>
             <Popup 
                 showPopup={showPopup}
                 popUpData={popUpData}
                 handleShowPopupData={handleShowPopupData}
             />
+            <div className="clearStyle" />
         </>
     )
 }

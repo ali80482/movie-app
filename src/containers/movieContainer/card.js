@@ -8,13 +8,20 @@ const Card = (props) => {
             <div className="cardContainerStyles">
                 {   movie && Object?.keys(movie)?.map((movieData, key) => {
                         return (
-                            <div key={movie[movieData].id} className="cardStyle" onClick={() => handleShowPopupData(movie[movieData])} data-testid={movie[movieData].id}>
-                                <img src={movie[movieData].imageUrl} alt="" className="imageStyle" />
-                                <div className="cardText">{movie[movieData].title}({movie[movieData].releaseDate}) (Rank: {movie[movieData].rank})</div>
+                            <div className="cardStyle" key={movie[movieData].id}  onClick={() => handleShowPopupData(movie[movieData])} data-testid={movie[movieData].id}>
+                                <div className="imageDiv">
+                                    <img src={movie[movieData].imageUrl} alt="" className="posterImage" />
+                                </div>
+                                <div className="imageDataDiv">
+                                    <div className="cardTitle">{movie[movieData].title}</div>
+                                    <div className="cardReleaseDate">Release Date: {movie[movieData].releaseDate}</div>
+                                    <div className="cardRank">Rank: {movie[movieData].rank}</div>
+                                </div>
                             </div>
                         )
                 })}
             </div>
+            <div className="clearStyle" />
         </>
     )
 }
