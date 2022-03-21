@@ -2,13 +2,13 @@
 
 @media (max-width: 600px) {
     .cardContainerStyles {
-        position: absolute;
+        position: $positionAbsolute;
         grid-template-columns: 1fr;
         width: 100%;
         column-gap: 5px;
         align-content: space-around;
         text-align: -webkit-center;
-    }
+    } 
     .imageStyle {
         width: 15%;
     }
@@ -16,7 +16,7 @@
 
 @media (min-width: 600px) {
     .cardContainerStyles {
-        position: absolute;
+        position: $positionAbsolute;
         display: inline-grid;
         grid-template-columns: 1fr 1fr;
         width: 100%;
@@ -31,7 +31,7 @@
 
 @media (min-width: 900px) {
     .cardContainerStyles {
-        position: absolute;
+        position: $positionAbsolute;
         display: inline-grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
@@ -43,7 +43,7 @@
 
 @media (min-width: 1200px) {
     .cardContainerStyles {
-        position: absolute;
+        position: $positionAbsolute;
         display: inline-grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         width: 100%;
@@ -121,15 +121,7 @@
 .popUpBody {
     position: fixed;
     background: #4c504f;
-    margin: 8% 2%;
-}
-
-@media (max-width: 300px) {
-    .popUpBody {
-        position: fixed;
-        background: #4c504f;
-        margin: 4% -2%;
-    }
+    margin: 1vw 1vh;
 }
 
 .popUpBody ul {
